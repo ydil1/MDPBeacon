@@ -9,5 +9,3 @@ This is the Java  reference app for the AndroidBeaconLibrary
 
 See the [Kotlin version of the reference app here.](https://github.com/davidgyoung/android-beacon-library-reference-kotlin)
 # MDPBeacon
-# MDPBeacon
-# MDPBeacon
