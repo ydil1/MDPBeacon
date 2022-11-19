@@ -27,6 +27,9 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.os.RemoteException;
 import android.util.Log;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -58,12 +61,24 @@ public class RangingActivity extends Activity {
    // protected Integer n = 1;
     Comparator<Beacon> distanceComparator = Comparator.comparing(Beacon::getDistance);
     TreeSet<Beacon> beaconsByDistance = new TreeSet<>(distanceComparator);
+    private WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranging);
 
+        // webview
+        webView = (WebView)findViewById(R.id.webview);
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl("https://embershan.github.io/mdp_website/");
+
+        // enable zoom and pinch controls
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setBuiltInZoomControls(true);
+        webSettings.setDisplayZoomControls(false); //hide the zoom buttons
+        // must enable javascript for the react website
+        webSettings.setJavaScriptEnabled(true);
 
     }
 
