@@ -58,8 +58,7 @@ public class RangingActivity extends Activity {
 //    static final int userrealid = userid.nextInt();
     static final int userrealid = 1;
     protected static final String TAG = "RangingActivity";
-    private BeaconManager beaconMan
-        ger = BeaconManager.getInstanceForApplication(this);
+    private BeaconManager beaconManager = BeaconManager.getInstanceForApplication(this);
    // protected Integer n = 1;
     Comparator<Beacon> distanceComparator = Comparator.comparing(Beacon::getDistance);
     TreeSet<Beacon> beaconsByDistance = new TreeSet<>(distanceComparator);
