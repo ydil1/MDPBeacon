@@ -54,10 +54,12 @@ import org.altbeacon.beacon.Region;
 
 public class RangingActivity extends Activity {
     static Beacon[] array = new Beacon[200];
-    static final Random userid = new Random(System.currentTimeMillis());
-    static final int userrealid = userid.nextInt();
+//    static final Random userid = new Random(System.currentTimeMillis());
+//    static final int userrealid = userid.nextInt();
+    static final int userrealid = 1;
     protected static final String TAG = "RangingActivity";
-    private BeaconManager beaconManager = BeaconManager.getInstanceForApplication(this);
+    private BeaconManager beaconMan
+        ger = BeaconManager.getInstanceForApplication(this);
    // protected Integer n = 1;
     Comparator<Beacon> distanceComparator = Comparator.comparing(Beacon::getDistance);
     TreeSet<Beacon> beaconsByDistance = new TreeSet<>(distanceComparator);
