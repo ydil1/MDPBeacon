@@ -149,6 +149,7 @@ public class RangingActivity extends Activity {
 
     private void postData(Beacon[] array, int userrealid){
         new Thread(() -> {
+
             JsonObject json1 = new JsonObject();
             json1.addProperty("userId", userrealid);
             json1.addProperty("beacon1Distance", array[0].getDistance());
