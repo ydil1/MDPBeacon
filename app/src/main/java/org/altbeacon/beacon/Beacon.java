@@ -26,6 +26,7 @@ package org.altbeacon.beacon;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
+import java.lang.Math.*;
 
 import androidx.annotation.RequiresApi;
 
@@ -551,7 +552,7 @@ public class Beacon implements Parcelable, Serializable {
             else {
                 LogManager.d(TAG, "Not using running average RSSI because it is null");
             }
-            mDistance = calculateDistance(mTxPower, bestRssiAvailable);
+            mDistance = -0.000333961349219*Math.pow(mRunningAverageRssi,3)-0.064825731721044*Math.pow(mRunningAverageRssi,2)-4.186626751385312*(mRunningAverageRssi) -89.481656438996836;
         }
         return mDistance;
     }
